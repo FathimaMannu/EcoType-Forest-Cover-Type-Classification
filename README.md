@@ -1,83 +1,55 @@
-# 🌲 EcoType: Forest Cover Type Classification
+# 🌲 EcoType: Forest Cover Classification
 
-A Machine Learning project that predicts **forest cover type** (7 classes) using U.S. Forest Service cartographic data.
+This project predicts **Forest Cover Type** using Machine Learning based on geographical and cartographic features such as elevation, soil type, wilderness area, slope, and more.
 
----
+The project includes:
+- Complete ML workflow (EDA → Preprocessing → Modeling → Evaluation)
+- Model comparison (RF, DT, KNN, LR, XGBoost)
+- Hyperparameter tuning
+- Streamlit web application for prediction
+- Deployment-ready folder structure
 
-## 📌 Project Overview  
-The objective of this project is to build a classification model that predicts the type of forest cover based on features like elevation, hydrology distances, slope, soil type, and wilderness area information.
+## 📌 Features
+- Predicts 7 forest cover types
+- Uses a trained ML model (`model.pkl`)
+- Uses a scaler (`scaler.pkl`) and label encoder (`label_encoder.pkl`)
+- Interactive Streamlit UI
+- Includes important plots and model evaluation metrics
 
-This supports:
-- 🌿 Environmental monitoring  
-- 🔥 Wildfire risk assessment  
-- 📡 Land cover mapping  
-- 🌎 Forest resource management  
+## 📁 Folder Structure
+```
+EcoType/
+│── data/
+│── notebooks/
+│── streamlit_app/
+│── models/
+│── README.md
+│── requirements.txt
+│── project_description.docx
+```
 
----
-
-## 📊 Dataset Information
-- **Rows:** 145,891  
-- **Columns:** 55  
-- **Target Variable:** `Cover_Type` (7 classes)  
-- **Features:**  
-  - 10 numerical columns  
-  - 4 Wilderness Areas (binary)  
-  - 40 Soil Types (binary)
-
-Dataset includes:  
-Elevation, Aspect, Slope, Distances to hydrology/roadways/fire points, Soil & Wilderness categories.
-
----
-
-## 🛠️ Workflow
-1. Data Collection  
-2. Data Understanding  
-3. Data Cleaning  
-4. Exploratory Data Analysis  
-5. Feature Engineering  
-6. Handling Class Imbalance  
-7. Model Building  
-8. Hyperparameter Tuning  
-9. Model Evaluation  
-10. Streamlit App Deployment  
-
----
-
-## 🧠 Models Used
-The following models were trained & compared:
-
-- Logistic Regression  
-- Decision Tree  
-- Random Forest (Best)  
-- XGBoost  
-- KNN  
-
----
-
-## 🏆 Best Model  
-**Random Forest Classifier**
-
-Saved under `models/model.pkl`
-
-Supporting files:
-- `scaler.pkl`
-- `label_encoder.pkl`
-
----
-
-## 📈 Evaluation Metrics
-- Accuracy  
-- Precision  
-- Recall  
-- F1-score  
-- Confusion Matrix  
-- Feature Importance  
-
----
-
-## 🚀 Streamlit Application  
-### How to run locally:
-
-```bash
+## 🚀 How to Run
+Install dependencies:
+```
 pip install -r requirements.txt
-streamlit run app/app.py
+```
+
+Run Streamlit app:
+```
+streamlit run app.py
+```
+
+## 🧠 Model Details
+- Best Model: Random Forest Classifier
+- Accuracy: ~85–90% (varies by dataset split)
+- Hyperparameter tuning performed with GridSearchCV
+
+## 📦 Files Included
+- `app.py` – Streamlit UI
+- `model.pkl`, `scaler.pkl`, `label_encoder.pkl`
+- `cover_type.csv` – dataset
+- `requirements.txt` – dependency list
+- `project_description.docx` – full documentation
+
+## ✨ Author
+Fathima — EcoType ML Project
